@@ -6,7 +6,6 @@
   align-items: center;
   justify-content: center;
   display: flex;
-
 }
 
 .main-div{
@@ -35,32 +34,30 @@ mat-card:hover {
 
 .example-checkbox {
   padding-right:10px;
-
-
 }
-
-
 
 .mat-checkbox-checked.mat-accent .mat-checkbox-background,.mat-checkbox-indeterminate.mat-accent .mat-checkbox-background {
   background-color: #005691;
 }
 
 
-
+.example-button-row {
+  padding-top: 20px;
+  padding-left:70px;
+  padding-right:-40px
+}
 
 .edit{
   opacity:0.6;
   float:right;
-
-
+  cursor: pointer;
 }
 
 .delete {
   opacity:0.6;
   float:right;
   padding-left:20px;
-
-
+  cursor: pointer;
 }
 
 

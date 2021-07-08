@@ -11,7 +11,7 @@
       <p>
         <mat-form-field appearance="legacy" [style.width.px]=400>
           <mat-label>Add items to the list</mat-label>
-          <input matInput placeholder="Placeholder">
+          <input matInput placeholder="">
           <mat-icon matSuffix>add_task</mat-icon>
           <mat-hint></mat-hint>
         </mat-form-field>
@@ -24,8 +24,8 @@
       </mat-card>
       <mat-card class="items">
         <span><mat-checkbox  class="example-checkbox">Choclates and Icecreams</mat-checkbox></span>
-        <span><mat-icon matSuffix class="delete">delete_outline</mat-icon></span>
-        <span> <mat-icon matSuffix class="edit">edit_note</mat-icon></span>
+        <span><mat-icon matSuffix class="delete" (click) = "deletelist()">delete_outline</mat-icon></span>
+        <span> <mat-icon matSuffix class="edit" (click) = "editlist()">edit_note</mat-icon></span>
       </mat-card>
       <mat-card class="items">
         <span><mat-checkbox class="example-checkbox"> Cookies and Cakes </mat-checkbox></span>
@@ -38,7 +38,7 @@
         <span> <mat-icon matSuffix class="edit">edit_note</mat-icon></span>
       </mat-card>
       <mat-card class="items">
-        <span><mat-checkbox class="example-checkbox"> Buy Vegetables </mat-checkbox></span>
+        <span><mat-checkbox class="example-checkbox"> Buy Icecreams and Frozen Yogurt  </mat-checkbox></span>
         <span><mat-icon matSuffix class="delete">delete_outline</mat-icon></span>
         <span> <mat-icon matSuffix class="edit">edit_note</mat-icon></span>
       </mat-card>
@@ -50,8 +50,8 @@
     </ng-container>
     <section>
       <div class="example-button-row">
-        <button mat-button color="warn">Basic</button>
-        <button mat-button color="primary">Primary</button>
+        <button mat-button color="warn">Show All</button>
+        <button mat-button color="primary">Completed</button>
         <button mat-button color="accent">Accent</button>
       </div>
     </section>

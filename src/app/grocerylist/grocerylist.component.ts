@@ -12,9 +12,20 @@ export class GrocerylistComponent implements OnInit {
 
   date = new Date();
 
+  editlist():void{
+    console.log("edit the list")
+  }
+
+  deletelist():void{
+    console.log("delete the list")
+  }
+
   constructor() { }
 
   ngOnInit(): void {
+
+
+
   }
 
 }
