@@ -1,16 +1,17 @@
 
 .card-container {
   margin:auto;
-  height:90vh;
+  padding-top: 45px;
   width:100%;
   align-items: center;
   justify-content: center;
   display: flex;
+
 }
 
 .main-div{
 max-width: 450px;
-height:600px;
+
 width:100%;
 border-radius: 2%;
 }
@@ -22,6 +23,40 @@ border-radius: 2%;
 
 .card-top{
   padding: 20px;
+}
+
+.items{
+  margin-top:15px;
+
+}
+
+mat-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 17px rgba(177, 105, 105, 0.35);
+
+
+}
+
+.example-checkbox {
+  padding-right:10px;
+
+}
+
+
+
+
+
+.edit{
+  opacity:0.6;
+  float:right;
+
+}
+
+.delete {
+  opacity:0.6;
+  float:right;
+  padding-left:20px
+
 }
 
 

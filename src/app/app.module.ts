@@ -11,6 +11,8 @@ import {MatInputModule} from '@angular/material/input';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import {MatFormFieldModule} from '@angular/material/form-field';
 
+import { MatCheckboxModule } from '@angular/material/checkbox';
+
 
 
 @NgModule({
@@ -26,6 +28,8 @@ import {MatFormFieldModule} from '@angular/material/form-field';
     MatIconModule,
     MatFormFieldModule,
     MatInputModule,
+
+    MatCheckboxModule
   ],
   providers: [],
   bootstrap: [AppComponent]
