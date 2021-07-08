@@ -10,7 +10,7 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatInputModule} from '@angular/material/input';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import {MatFormFieldModule} from '@angular/material/form-field';
-
+import {MatButtonModule} from '@angular/material/button';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 
 
@@ -28,7 +28,7 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
     MatIconModule,
     MatFormFieldModule,
     MatInputModule,
-
+    MatButtonModule,
     MatCheckboxModule
   ],
   providers: [],

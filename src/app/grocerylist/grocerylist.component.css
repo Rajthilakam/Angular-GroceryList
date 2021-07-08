@@ -11,9 +11,8 @@
 
 .main-div{
 max-width: 450px;
-
 width:100%;
-border-radius: 2%;
+border-radius: 15%;
 }
 
 .header-image {
@@ -27,21 +26,24 @@ border-radius: 2%;
 
 .items{
   margin-top:15px;
-
 }
 
 mat-card:hover {
   transform: translateY(-3px);
   box-shadow: 0 4px 17px rgba(177, 105, 105, 0.35);
-
-
 }
 
 .example-checkbox {
   padding-right:10px;
 
+
 }
 
+
+
+.mat-checkbox-checked.mat-accent .mat-checkbox-background,.mat-checkbox-indeterminate.mat-accent .mat-checkbox-background {
+  background-color: #005691;
+}
 
 
 
@@ -50,12 +52,14 @@ mat-card:hover {
   opacity:0.6;
   float:right;
 
+
 }
 
 .delete {
   opacity:0.6;
   float:right;
-  padding-left:20px
+  padding-left:20px;
+
 
 }
 
