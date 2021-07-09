@@ -11,48 +11,34 @@
       <p>
         <mat-form-field appearance="legacy" [style.width.px]=400>
           <mat-label>Add items to the list</mat-label>
-          <input matInput placeholder="">
+          <input matInput placeholder="" [(ngModel)] = "todoitem" (keyup.enter) = "addtolist()"/>
           <mat-icon matSuffix>add_task</mat-icon>
           <mat-hint></mat-hint>
         </mat-form-field>
       </p>
-    <ng-container >
+    <ng-container class="card-items" *ngFor = "let todo of todo">
       <mat-card class="items">
-        <span><mat-checkbox class="example-checkbox"> Buy Milk </mat-checkbox></span>
-        <span><mat-icon matSuffix class="delete">delete_outline</mat-icon></span>
-        <span> <mat-icon matSuffix class="edit">edit_note</mat-icon></span>
+        <span><mat-checkbox class="example-checkbox"></mat-checkbox></span>
+        <span *ngIf="!todo.edit; else editingTodo">{{todo.title}}</span>
+        <ng-template #editingTodo>
+          <span><input type="text" #myinput [(ngModel)] = "todo.title" (blur) = "doneedit(todo)" (keyup.enter) = "doneedit(todo)" autofocus></span>
+        </ng-template>
+        <span><mat-icon matSuffix class="delete" (click)="deletelist(todo.id)">delete_outline</mat-icon></span>
+        <span> <mat-icon matSuffix class="edit" (click) = "editlist(todo)">edit_note</mat-icon></span>
       </mat-card>
-      <mat-card class="items">
-        <span><mat-checkbox  class="example-checkbox">Choclates and Icecreams</mat-checkbox></span>
-        <span><mat-icon matSuffix class="delete" (click) = "deletelist()">delete_outline</mat-icon></span>
-        <span> <mat-icon matSuffix class="edit" (click) = "editlist()">edit_note</mat-icon></span>
-      </mat-card>
-      <mat-card class="items">
-        <span><mat-checkbox class="example-checkbox"> Cookies and Cakes </mat-checkbox></span>
-        <span><mat-icon matSuffix class="delete">delete_outline</mat-icon></span>
-        <span> <mat-icon matSuffix class="edit">edit_note</mat-icon></span>
-      </mat-card>
-      <mat-card class="items">
-        <span><mat-checkbox class="example-checkbox"> Buy Paneer Pizza </mat-checkbox></span>
-        <span><mat-icon matSuffix class="delete">delete_outline</mat-icon></span>
-        <span> <mat-icon matSuffix class="edit">edit_note</mat-icon></span>
-      </mat-card>
-      <mat-card class="items">
-        <span><mat-checkbox class="example-checkbox"> Buy Icecreams and Frozen Yogurt  </mat-checkbox></span>
-        <span><mat-icon matSuffix class="delete">delete_outline</mat-icon></span>
-        <span> <mat-icon matSuffix class="edit">edit_note</mat-icon></span>
-      </mat-card>
-      <mat-card class="items">
-        <span><mat-checkbox class="example-checkbox"> Buy Vegetables </mat-checkbox></span>
-        <span><mat-icon matSuffix class="delete">delete_outline</mat-icon></span>
-        <span> <mat-icon matSuffix class="edit">edit_note</mat-icon></span>
-      </mat-card>
+
     </ng-container>
+
+
     <section>
       <div class="example-button-row">
         <button mat-button color="warn">Show All</button>
         <button mat-button color="primary">Completed</button>
-        <button mat-button color="accent">Accent</button>
+        <button mat-button color="accent">Active</button>
+      </div>
+      <div class="clear">
+        <button mat-button color="primary">Clear Completed</button>
+        <button mat-button color="primary" class="clearall">Clear All</button>
       </div>
     </section>
 

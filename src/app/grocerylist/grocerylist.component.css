@@ -6,12 +6,14 @@
   align-items: center;
   justify-content: center;
   display: flex;
+
 }
 
 .main-div{
 max-width: 450px;
 width:100%;
 border-radius: 15%;
+
 }
 
 .header-image {
@@ -23,13 +25,20 @@ border-radius: 15%;
   padding: 20px;
 }
 
+.card-items {
+  display:flex;
+}
+
 .items{
   margin-top:15px;
+
 }
 
 mat-card:hover {
   transform: translateY(-3px);
-  box-shadow: 0 4px 17px rgba(177, 105, 105, 0.35);
+  box-shadow: 0 4px 27px rgba(177, 105, 105, 0.35);
+  cursor: pointer;
+
 }
 
 .example-checkbox {
@@ -59,6 +68,11 @@ mat-card:hover {
   padding-left:20px;
   cursor: pointer;
 }
+
+.clear{
+  padding-left:70px
+}
+
 
 
 
