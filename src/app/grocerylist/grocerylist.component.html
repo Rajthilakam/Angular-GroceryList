@@ -33,7 +33,7 @@
 
 
     <section>
-      
+
       <div class="example-button-row">
         <button mat-button color="warn" [class.active]="filter == 'all'" (click) = "filter = 'all'">All</button>
         <button mat-button color="primary" [class.active]="filter == 'completed'" (click) = "filter = 'completed'">Completed</button>
@@ -41,7 +41,7 @@
       </div>
 
       <div class="clear">
-        <button mat-button color="primary" class="clearall">Check All</button>
+        <button mat-button color="primary" class="clearall" [class.active]="filter == 'checkall'" (click) = "selectall()" >Check All</button>
         <button mat-button color="primary" class="clearall" [class.active]="filter == 'clear'" (click) = "filter = 'clear'" >Clear List</button>
       </div>
     </section>

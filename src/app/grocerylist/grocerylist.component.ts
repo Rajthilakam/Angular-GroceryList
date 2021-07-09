@@ -89,10 +89,7 @@ export class GrocerylistComponent implements OnInit {
   }
 
   selectall():void {
-
-    console.log("clicked")
-
-    //const target = event.target as HTMLInputElement
+    this.filter ='checkall'
     this.todo.forEach(todo => todo.completed = true)
     console.log(this.todo)
     console.log("After")
