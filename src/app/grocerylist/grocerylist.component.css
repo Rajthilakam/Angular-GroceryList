@@ -86,6 +86,10 @@ mat-card:hover {
   padding-left:70px
 }
 
+.active{
+  background-color:#FBE8E8;
+}
+
 
 
 

@@ -5,6 +5,7 @@ import { Itodolist } from '../itodolist';
 import { AutofocusDirective } from '../autofocus.directive';
 import {  ViewChild, ElementRef } from '@angular/core';
 import { FormControl,ReactiveFormsModule } from '@angular/forms';
+import { EventListenerFocusTrapInertStrategy } from '@angular/cdk/a11y';
 
 
 
@@ -20,6 +21,7 @@ export class GrocerylistComponent implements OnInit {
   todo:Itodolist[] = []
   todoitem:string = ''
   beforeedit:string = ''
+  filter:string = 'all'
 
 
 
@@ -87,9 +89,27 @@ export class GrocerylistComponent implements OnInit {
   }
 
   selectall():void {
+
     console.log("clicked")
-    this.todo.map(todo => ({completed:todo.completed,checked:true}))
+
+    //const target = event.target as HTMLInputElement
+    this.todo.forEach(todo => todo.completed = true)
+    console.log(this.todo)
+    console.log("After")
   }
 
+  todofilter():Itodolist[] {
+    if (this.filter === 'all') {
+      return this.todo;
+    } else if (this.filter === 'active') {
+      return this.todo.filter(todo => !todo.completed);
+    } else if (this.filter === 'completed') {
+      return this.todo.filter(todo => todo.completed);
+    } else if(this.filter === 'clear') {
+      return this.todo = []
+    }
+
+    return this.todo
+  }
 
 }

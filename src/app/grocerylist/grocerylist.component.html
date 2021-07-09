@@ -19,10 +19,10 @@
         </mat-form-field>
       </p>
 
-    <ng-container class="card-items" *ngFor = "let todo of todo">
+    <ng-container class="card-items" *ngFor = "let todo of todofilter()">
       <mat-card class="items">
         <span><mat-checkbox class="example-checkbox"  [(ngModel)] = "todo.completed" ></mat-checkbox></span>
-        <span *ngIf="!todo.edit; else editingTodo" [ngClass] = "{'completed':todo.completed}">{{todo.title}}</span>
+        <span *ngIf="!todo.edit; else editingTodo"  [ngClass] = "{'completed':todo.completed}">{{todo.title}}</span>
         <ng-template #editingTodo>
           <span><input type="text" #myinput [(ngModel)] = "todo.title" (blur) = "doneedit(todo)" (keyup.enter) = "doneedit(todo)" appAutofocus></span>
         </ng-template>
@@ -33,14 +33,16 @@
 
 
     <section>
+      
       <div class="example-button-row">
-        <button mat-button color="warn" (click) = "selectall()">Select All</button>
-        <button mat-button color="primary">Completed</button>
-        <button mat-button color="accent">Active</button>
+        <button mat-button color="warn" [class.active]="filter == 'all'" (click) = "filter = 'all'">All</button>
+        <button mat-button color="primary" [class.active]="filter == 'completed'" (click) = "filter = 'completed'">Completed</button>
+        <button mat-button color="accent" [class.active]="filter == 'active'" (click) = "filter = 'active'">Active</button>
       </div>
+
       <div class="clear">
-        <button mat-button color="primary">Clear Completed</button>
-        <button mat-button color="primary" class="clearall">Clear All</button>
+        <button mat-button color="primary" class="clearall">Check All</button>
+        <button mat-button color="primary" class="clearall" [class.active]="filter == 'clear'" (click) = "filter = 'clear'" >Clear List</button>
       </div>
     </section>
 
