@@ -19,11 +19,12 @@ export class GrocerylistComponent implements OnInit {
   date = new Date();
   todo:Itodolist[] = []
   todoitem:string = ''
+  beforeedit:string = ''
 
 
 
 
-  constructor() { }
+  constructor(private elementRef: ElementRef) { }
 
   ngOnInit(): void {
 
@@ -51,12 +52,7 @@ export class GrocerylistComponent implements OnInit {
       'completed':false,
       'edit':false,
     },
-
-
   ]
-
-  console.log(this.todoitem)
-
   }
 
   addtolist(){
@@ -78,12 +74,21 @@ export class GrocerylistComponent implements OnInit {
   }
 
   editlist(todo:Itodolist):void {
+    this.beforeedit = todo.title
     todo.edit = true
   }
 
 
   doneedit(todo:Itodolist):void {
-    todo.edit= false
+    if(todo.title.trim().length === 0) {
+      todo.title = this.beforeedit
+    }
+    todo.edit = false
+  }
+
+  selectall():void {
+    console.log("clicked")
+    this.todo.map(todo => ({completed:todo.completed,checked:true}))
   }
 
 

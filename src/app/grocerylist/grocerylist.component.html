@@ -21,8 +21,8 @@
 
     <ng-container class="card-items" *ngFor = "let todo of todo">
       <mat-card class="items">
-        <span><mat-checkbox class="example-checkbox"></mat-checkbox></span>
-        <span *ngIf="!todo.edit; else editingTodo">{{todo.title}}</span>
+        <span><mat-checkbox class="example-checkbox"  [(ngModel)] = "todo.completed" ></mat-checkbox></span>
+        <span *ngIf="!todo.edit; else editingTodo" [ngClass] = "{'completed':todo.completed}">{{todo.title}}</span>
         <ng-template #editingTodo>
           <span><input type="text" #myinput [(ngModel)] = "todo.title" (blur) = "doneedit(todo)" (keyup.enter) = "doneedit(todo)" appAutofocus></span>
         </ng-template>
@@ -34,7 +34,7 @@
 
     <section>
       <div class="example-button-row">
-        <button mat-button color="warn">Show All</button>
+        <button mat-button color="warn" (click) = "selectall()">Select All</button>
         <button mat-button color="primary">Completed</button>
         <button mat-button color="accent">Active</button>
       </div>
