@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {ViewEncapsulation } from '@angular/core';
 import { DatePipe } from '@angular/common';
 import { Itodolist } from '../itodolist';
+import { AutofocusDirective } from '../autofocus.directive';
 import {  ViewChild, ElementRef } from '@angular/core';
 import { FormControl,ReactiveFormsModule } from '@angular/forms';
 
@@ -18,6 +19,9 @@ export class GrocerylistComponent implements OnInit {
   date = new Date();
   todo:Itodolist[] = []
   todoitem:string = ''
+
+
+
 
   constructor() { }
 

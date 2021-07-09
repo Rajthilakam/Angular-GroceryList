@@ -13,13 +13,15 @@ import { FormControl,FormsModule,ReactiveFormsModule } from '@angular/forms';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatButtonModule} from '@angular/material/button';
 import { MatCheckboxModule } from '@angular/material/checkbox';
+import { AutofocusDirective } from './autofocus.directive';
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    GrocerylistComponent
+    GrocerylistComponent,
+    AutofocusDirective
   ],
   imports: [
     BrowserModule,

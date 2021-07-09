@@ -7,7 +7,9 @@
       <mat-card-title>GROCERY LIST</mat-card-title>
       <mat-card-subtitle>{{date | date:'longDate'}}</mat-card-subtitle>
     </mat-card-header>
+
     <mat-card-content>
+
       <p>
         <mat-form-field appearance="legacy" [style.width.px]=400>
           <mat-label>Add items to the list</mat-label>
@@ -16,17 +18,17 @@
           <mat-hint></mat-hint>
         </mat-form-field>
       </p>
+
     <ng-container class="card-items" *ngFor = "let todo of todo">
       <mat-card class="items">
         <span><mat-checkbox class="example-checkbox"></mat-checkbox></span>
         <span *ngIf="!todo.edit; else editingTodo">{{todo.title}}</span>
         <ng-template #editingTodo>
-          <span><input type="text" #myinput [(ngModel)] = "todo.title" (blur) = "doneedit(todo)" (keyup.enter) = "doneedit(todo)" autofocus></span>
+          <span><input type="text" #myinput [(ngModel)] = "todo.title" (blur) = "doneedit(todo)" (keyup.enter) = "doneedit(todo)" appAutofocus></span>
         </ng-template>
         <span><mat-icon matSuffix class="delete" (click)="deletelist(todo.id)">delete_outline</mat-icon></span>
         <span> <mat-icon matSuffix class="edit" (click) = "editlist(todo)">edit_note</mat-icon></span>
       </mat-card>
-
     </ng-container>
 
 
@@ -43,7 +45,8 @@
     </section>
 
     </mat-card-content>
-    </div>
+
+  </div>
   </mat-card>
 </div>
 
