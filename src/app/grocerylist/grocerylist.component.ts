@@ -73,8 +73,9 @@ export class GrocerylistComponent implements OnInit {
     this.todoitem = ''
     this.id++;
     this._snackBar.open('Items added','', {
-      duration:3000,
+      duration:2000,
       verticalPosition:'top',
+      //horizontalPosition:'right',
       panelClass: ['blue-snackbar']
       })
     console.log(this.todo)
@@ -82,6 +83,7 @@ export class GrocerylistComponent implements OnInit {
 
   deletelist(id:number):void {
     this.todo = this.todo.filter(todo => todo.id != id)
+    
   }
 
   editlist(todo:Itodolist):void {
