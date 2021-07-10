@@ -22,6 +22,7 @@ export class GrocerylistComponent implements OnInit {
   todoitem:string = ''
   beforeedit:string = ''
   filter:string = 'all'
+  id:number = 5
 
 
 
@@ -62,12 +63,13 @@ export class GrocerylistComponent implements OnInit {
       return
     }
       this.todo.push({
-        'id':5,
+        'id':this.id,
         'title':this.todoitem,
         'completed':false,
         'edit':false
       })
     this.todoitem = ''
+    this.id++;
     console.log(this.todo)
   }
 
