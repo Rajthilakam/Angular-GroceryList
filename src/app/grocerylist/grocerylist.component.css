@@ -90,7 +90,9 @@ mat-card:hover {
   background-color:#FBE8E8;
 }
 
-
+.blue-snackbar {
+  background: mediumvioletred;
+}
 
 
 

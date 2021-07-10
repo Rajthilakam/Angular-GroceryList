@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {ViewEncapsulation } from '@angular/core';
 import { DatePipe } from '@angular/common';
 import { Itodolist } from '../itodolist';
+import { MatSnackBar } from "@angular/material/snack-bar";
 import { AutofocusDirective } from '../autofocus.directive';
 import {  ViewChild, ElementRef } from '@angular/core';
 import { FormControl,ReactiveFormsModule } from '@angular/forms';
@@ -27,7 +28,8 @@ export class GrocerylistComponent implements OnInit {
 
 
 
-  constructor(private elementRef: ElementRef) { }
+  constructor(private elementRef: ElementRef,
+              private _snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
 
@@ -70,6 +72,11 @@ export class GrocerylistComponent implements OnInit {
       })
     this.todoitem = ''
     this.id++;
+    this._snackBar.open('Items added','', {
+      duration:3000,
+      verticalPosition:'top',
+      panelClass: ['blue-snackbar']
+      })
     console.log(this.todo)
   }
 

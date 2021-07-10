@@ -8,6 +8,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatCardModule } from '@angular/material/card';
 import {MatIconModule} from '@angular/material/icon';
 import {MatInputModule} from '@angular/material/input';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 import { FormControl,FormsModule,ReactiveFormsModule } from '@angular/forms';
 import {MatFormFieldModule} from '@angular/material/form-field';
@@ -34,7 +35,7 @@ import { AutofocusDirective } from './autofocus.directive';
     MatButtonModule,
     MatCheckboxModule,
     FormsModule,
-    
+    MatSnackBarModule,
     ReactiveFormsModule
   ],
   providers: [],
