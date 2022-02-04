@@ -4,6 +4,12 @@ https://youtu.be/FkO5axkUcng
 Angular Application with Crud operations.
 
 
+
+https://user-images.githubusercontent.com/50530648/152591920-f7274b74-5a92-4ed7-80f3-b04a6f8d287e.mp4
+
+
+
+
 # AngularGrocery
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.0.3.
